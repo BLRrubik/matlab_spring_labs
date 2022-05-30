@@ -1,0 +1,4 @@
+spring:
+  resources:
+    static-locations: "file:///D:/Programming/Java/matlabWeb/src/main/resources/static"
+    cache-perio: 0
