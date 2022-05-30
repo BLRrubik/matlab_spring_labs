@@ -18,7 +18,7 @@ import java.util.Optional;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/lab1")
+@RequestMapping("/lab1")//
 public class Lab1Controller {
 
 
