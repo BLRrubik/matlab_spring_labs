@@ -1,6 +1,13 @@
+clc 
+clear;
+savePath  = "C:\\matlab_site\\front\\matlabWeb\\src\\outputs\\lab1InPrime\\";
+out=sim('simulink/models1.slx'); 
+counter = 1;
+i = 1;
 % Часть 1
 % Зона нечувсвительности
-figure
+figure (i); i=i+1;
+hold on
 plot(out.ScopeData.signals(2).values, out.ScopeData.signals(1).values)
 grid minor
 title('Статические характеристики');
@@ -9,9 +16,12 @@ xlabel('x');
 ylabel('y');
 ax = gca;
 ax.FontSize = 10;
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 
 % Зона насыщения
-figure
+figure (i); i=i+1;
+hold on
 plot(out.ScopeData1.signals(2).values, out.ScopeData1.signals(1).values)
 grid minor
 title('Статические характеристики');
@@ -20,9 +30,11 @@ xlabel('x');
 ylabel('y');
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Зона нечувствительности с насыщением
-figure
+figure (i); i=i+1;
+hold on
 plot(out.ScopeData2.signals(2).values, out.ScopeData2.signals(1).values)
 grid minor
 title('Статические характеристики');
@@ -31,9 +43,11 @@ xlabel('x');
 ylabel('y');
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Двухпозиционное реле
-figure
+figure (i); i=i+1;
+hold on
 plot(out.ScopeData3.signals(2).values, out.ScopeData3.signals(1).values)
 grid minor
 title('Статические характеристики');
@@ -42,9 +56,11 @@ xlabel('x');
 ylabel('y');
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Трехпозиционное реле
-figure
+figure (i); i=i+1;
+hold on
 plot(out.ScopeData4.signals(2).values, out.ScopeData4.signals(1).values)
 grid minor
 title('Статические характеристики');
@@ -53,9 +69,11 @@ xlabel('x');
 ylabel('y');
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Гистерезис
-figure
+figure (i); i=i+1;
+hold on
 plot(out.ScopeData5.signals(2).values, out.ScopeData5.signals(1).values)
 grid minor
 title('Статические характеристики');
@@ -64,10 +82,12 @@ xlabel('x');
 ylabel('y');
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Часть 2
 % Зона нечувсвительности
- figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData.signals(1).values,'--', out.tout, 2*sin(1*out.tout))
 grid minor
 title('Реакция на гармоническое воздействие');
@@ -77,9 +97,11 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Зона насыщения
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData1.signals(1).values,'--', out.tout, 2*sin(1*out.tout))
 grid minor
 title('Реакция на гармоническое воздействие');
@@ -89,9 +111,11 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Зона нечувствительности с насыщением
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData2.signals(1).values,'--', out.tout, 2*sin(1*out.tout))
 grid minor
 title('Реакция на гармоническое воздействие');
@@ -101,9 +125,11 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Двухпозиционное реле
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData3.signals(1).values,'--', out.tout, 2*sin(1*out.tout))
 grid minor
 title('Реакция на гармоническое воздействие');
@@ -113,9 +139,11 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Трехпозиционное реле
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData4.signals(1).values,'--', out.tout, 2*sin(1*out.tout))
 grid minor
 title('Реакция на гармоническое воздействие');
@@ -125,9 +153,11 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 % Гистерезис
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData5.signals(1).values,'--', out.tout, 2*sin(1*out.tout))
 grid minor
 title('Реакция на гармоническое воздействие');
@@ -137,12 +167,14 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 %Часть 3
 %Последовательное соединение звеньев
 
 %Вариант 1
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData6.signals(1).values,'--', out.tout, 3*sin(pi/2*out.tout))
 grid minor
 title('Последовательное соединение звеньев');
@@ -152,9 +184,11 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
-
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 %Вариант 2
-figure
+figure (i); i=i+1;
+hold on
 plot(out.tout, out.ScopeData7.signals(1).values,'--', out.tout, 3*sin(pi/2*out.tout))
 grid minor
 title('Последовательное соединение звеньев');
@@ -164,4 +198,7 @@ ylabel('y(t)');
 legend('y(t)','sin')
 ax = gca;
 ax.FontSize = 10;
+saveas(gcf, savePath + counter, 'png');
+counter  = counter + 1;
 
+close all;
